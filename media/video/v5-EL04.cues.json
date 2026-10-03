@@ -1,0 +1,102 @@
+{
+ "video": "v5-EL04",
+ "src": "media/video/v5-EL04.mp4",
+ "poster": "media/video/v5-EL04.jpg",
+ "duration": 31.1,
+ "song": false,
+ "bpm": null,
+ "status": "draft_unapproved",
+ "source": "v5 directing script (shotlist_v5.json) · video_src/build_v5_videos.py · 1920×1080 24 fps",
+ "interim": "Grok motion pending: 1 shot(s) use the start-frame still — S02",
+ "scenes": [
+  {
+   "t": 0.0,
+   "title": "الصحن",
+   "thumb": "v5/ROOM5-T"
+  },
+  {
+   "t": 2.5,
+   "title": "يد سيف تصبّ",
+   "thumb": "v5/SF-07"
+  },
+  {
+   "t": 9.0,
+   "title": "الصوت الأوّل",
+   "thumb": "v5/P09"
+  },
+  {
+   "t": 14.8,
+   "title": "الكلمة وحدها",
+   "thumb": "v5/P09"
+  },
+  {
+   "t": 18.3,
+   "title": "في جملة",
+   "thumb": "v5/P09"
+  },
+  {
+   "t": 25.6,
+   "title": "بطاقتي",
+   "thumb": "v5/P10"
+  }
+ ],
+ "cues": [],
+ "lines": [
+  {
+   "id": "bariq_L1-01_v5_maa_ar",
+   "t": 6.34,
+   "end": 7.11,
+   "sp": "SAY",
+   "text": "ماءْ."
+  },
+  {
+   "id": "bariq_L1-01_v5_mm_maa_ar",
+   "t": 9.44,
+   "end": 12.038,
+   "sp": "SAY",
+   "text": "مْـ… ماءْ."
+  },
+  {
+   "id": "bariq_L1-01_v5_maa_ar",
+   "t": 15.14,
+   "end": 15.91,
+   "sp": "SAY",
+   "text": "ماءْ."
+  },
+  {
+   "id": "bariq_L1-01_d1-EL06_02_ar",
+   "t": 20.419,
+   "end": 22.076,
+   "sp": "MAJ",
+   "text": "الماءُ في الصَّحْنِ."
+  },
+  {
+   "id": "bariq_L1-01_ins-say_ar",
+   "t": 22.484,
+   "end": 23.993,
+   "sp": "HAB",
+   "text": "قولوا مَعي، هَيّا!"
+  },
+  {
+   "id": "bariq_L1-01_v5_mm_maa_ar",
+   "t": 27.54,
+   "end": 30.138,
+   "sp": "SAY",
+   "text": "مْـ… ماءْ."
+  }
+ ],
+ "marks": [
+  {
+   "t": 12.3,
+   "text": "✋ ردِّدوا: «مْـ… ماءْ.» — الشفتان مطبقتان أوّلاً"
+  },
+  {
+   "t": 16.1,
+   "text": "✋ ردِّدوا: «ماءْ.»"
+  },
+  {
+   "t": 24.2,
+   "text": "✋ ردِّدوا: «الماءُ في الصَّحْنِ.»"
+  }
+ ]
+}
