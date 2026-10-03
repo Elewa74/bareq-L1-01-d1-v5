@@ -1,0 +1,605 @@
+{
+ "_note": "draft_unapproved \u00b7 1920x1080 frames \u00b7 only the mouth region differs between visemes of one character (pixel-aligned, verified by difference images in prod/art/qa) \u00b7 mouth_box = union of all mouth changes for that character (paste region) \u00b7 V0 rest, V1 lips pressed (m), V1b pressed + slight cheek tension, V2 half-open, V3 wide aa, V5 closing, VU rounded u",
+ "images": {
+  "bariq-V0": {
+   "file": "bariq-V0.webp",
+   "char": "bariq",
+   "viseme": "V0",
+   "size": [
+    1920,
+    1080
+   ],
+   "mouth_box": [
+    784,
+    540,
+    1118,
+    846
+   ],
+   "mouth_center": [
+    951,
+    693
+   ]
+  },
+  "bariq-V1": {
+   "file": "bariq-V1.webp",
+   "char": "bariq",
+   "viseme": "V1",
+   "size": [
+    1920,
+    1080
+   ],
+   "mouth_box": [
+    784,
+    540,
+    1118,
+    846
+   ],
+   "mouth_center": [
+    951,
+    693
+   ]
+  },
+  "bariq-V1b": {
+   "file": "bariq-V1b.webp",
+   "char": "bariq",
+   "viseme": "V1b",
+   "size": [
+    1920,
+    1080
+   ],
+   "mouth_box": [
+    784,
+    540,
+    1118,
+    846
+   ],
+   "mouth_center": [
+    951,
+    693
+   ]
+  },
+  "bariq-V2": {
+   "file": "bariq-V2.webp",
+   "char": "bariq",
+   "viseme": "V2",
+   "size": [
+    1920,
+    1080
+   ],
+   "mouth_box": [
+    784,
+    540,
+    1118,
+    846
+   ],
+   "mouth_center": [
+    951,
+    693
+   ]
+  },
+  "bariq-V3": {
+   "file": "bariq-V3.webp",
+   "char": "bariq",
+   "viseme": "V3",
+   "size": [
+    1920,
+    1080
+   ],
+   "mouth_box": [
+    784,
+    540,
+    1118,
+    846
+   ],
+   "mouth_center": [
+    951,
+    693
+   ]
+  },
+  "bariq-V5": {
+   "file": "bariq-V5.webp",
+   "char": "bariq",
+   "viseme": "V5",
+   "size": [
+    1920,
+    1080
+   ],
+   "mouth_box": [
+    784,
+    540,
+    1118,
+    846
+   ],
+   "mouth_center": [
+    951,
+    693
+   ]
+  },
+  "bariq-VU": {
+   "file": "bariq-VU.webp",
+   "char": "bariq",
+   "viseme": "VU",
+   "size": [
+    1920,
+    1080
+   ],
+   "mouth_box": [
+    784,
+    540,
+    1118,
+    846
+   ],
+   "mouth_center": [
+    951,
+    693
+   ]
+  },
+  "majed-V0": {
+   "file": "majed-V0.webp",
+   "char": "majed",
+   "viseme": "V0",
+   "size": [
+    1920,
+    1080
+   ],
+   "mouth_box": [
+    840,
+    535,
+    1143,
+    764
+   ],
+   "mouth_center": [
+    991,
+    649
+   ]
+  },
+  "majed-V1": {
+   "file": "majed-V1.webp",
+   "char": "majed",
+   "viseme": "V1",
+   "size": [
+    1920,
+    1080
+   ],
+   "mouth_box": [
+    840,
+    535,
+    1143,
+    764
+   ],
+   "mouth_center": [
+    991,
+    649
+   ]
+  },
+  "majed-V1b": {
+   "file": "majed-V1b.webp",
+   "char": "majed",
+   "viseme": "V1b",
+   "size": [
+    1920,
+    1080
+   ],
+   "mouth_box": [
+    840,
+    535,
+    1143,
+    764
+   ],
+   "mouth_center": [
+    991,
+    649
+   ]
+  },
+  "majed-V2": {
+   "file": "majed-V2.webp",
+   "char": "majed",
+   "viseme": "V2",
+   "size": [
+    1920,
+    1080
+   ],
+   "mouth_box": [
+    840,
+    535,
+    1143,
+    764
+   ],
+   "mouth_center": [
+    991,
+    649
+   ]
+  },
+  "majed-V3": {
+   "file": "majed-V3.webp",
+   "char": "majed",
+   "viseme": "V3",
+   "size": [
+    1920,
+    1080
+   ],
+   "mouth_box": [
+    840,
+    535,
+    1143,
+    764
+   ],
+   "mouth_center": [
+    991,
+    649
+   ]
+  },
+  "majed-V5": {
+   "file": "majed-V5.webp",
+   "char": "majed",
+   "viseme": "V5",
+   "size": [
+    1920,
+    1080
+   ],
+   "mouth_box": [
+    840,
+    535,
+    1143,
+    764
+   ],
+   "mouth_center": [
+    991,
+    649
+   ]
+  },
+  "majed-VU": {
+   "file": "majed-VU.webp",
+   "char": "majed",
+   "viseme": "VU",
+   "size": [
+    1920,
+    1080
+   ],
+   "mouth_box": [
+    840,
+    535,
+    1143,
+    764
+   ],
+   "mouth_center": [
+    991,
+    649
+   ]
+  },
+  "saif-V0": {
+   "file": "saif-V0.webp",
+   "char": "saif",
+   "viseme": "V0",
+   "size": [
+    1920,
+    1080
+   ],
+   "mouth_box": [
+    829,
+    533,
+    1100,
+    742
+   ],
+   "mouth_center": [
+    964,
+    637
+   ]
+  },
+  "saif-V1": {
+   "file": "saif-V1.webp",
+   "char": "saif",
+   "viseme": "V1",
+   "size": [
+    1920,
+    1080
+   ],
+   "mouth_box": [
+    829,
+    533,
+    1100,
+    742
+   ],
+   "mouth_center": [
+    964,
+    637
+   ]
+  },
+  "saif-V1b": {
+   "file": "saif-V1b.webp",
+   "char": "saif",
+   "viseme": "V1b",
+   "size": [
+    1920,
+    1080
+   ],
+   "mouth_box": [
+    829,
+    533,
+    1100,
+    742
+   ],
+   "mouth_center": [
+    964,
+    637
+   ]
+  },
+  "saif-V2": {
+   "file": "saif-V2.webp",
+   "char": "saif",
+   "viseme": "V2",
+   "size": [
+    1920,
+    1080
+   ],
+   "mouth_box": [
+    829,
+    533,
+    1100,
+    742
+   ],
+   "mouth_center": [
+    964,
+    637
+   ]
+  },
+  "saif-V3": {
+   "file": "saif-V3.webp",
+   "char": "saif",
+   "viseme": "V3",
+   "size": [
+    1920,
+    1080
+   ],
+   "mouth_box": [
+    829,
+    533,
+    1100,
+    742
+   ],
+   "mouth_center": [
+    964,
+    637
+   ]
+  },
+  "saif-V5": {
+   "file": "saif-V5.webp",
+   "char": "saif",
+   "viseme": "V5",
+   "size": [
+    1920,
+    1080
+   ],
+   "mouth_box": [
+    829,
+    533,
+    1100,
+    742
+   ],
+   "mouth_center": [
+    964,
+    637
+   ]
+  },
+  "saif-VU": {
+   "file": "saif-VU.webp",
+   "char": "saif",
+   "viseme": "VU",
+   "size": [
+    1920,
+    1080
+   ],
+   "mouth_box": [
+    829,
+    533,
+    1100,
+    742
+   ],
+   "mouth_center": [
+    964,
+    637
+   ]
+  },
+  "saif-table-V0": {
+   "file": "saif-table-V0.webp",
+   "char": "saif-table",
+   "viseme": "V0",
+   "size": [
+    1920,
+    1080
+   ],
+   "mouth_box": [
+    913,
+    363,
+    1131,
+    562
+   ],
+   "mouth_center": [
+    1022,
+    462
+   ]
+  },
+  "saif-table-V1": {
+   "file": "saif-table-V1.webp",
+   "char": "saif-table",
+   "viseme": "V1",
+   "size": [
+    1920,
+    1080
+   ],
+   "mouth_box": [
+    913,
+    363,
+    1131,
+    562
+   ],
+   "mouth_center": [
+    1022,
+    462
+   ]
+  },
+  "saif-table-V1b": {
+   "file": "saif-table-V1b.webp",
+   "char": "saif-table",
+   "viseme": "V1b",
+   "size": [
+    1920,
+    1080
+   ],
+   "mouth_box": [
+    913,
+    363,
+    1131,
+    562
+   ],
+   "mouth_center": [
+    1022,
+    462
+   ]
+  },
+  "saif-table-V2": {
+   "file": "saif-table-V2.webp",
+   "char": "saif-table",
+   "viseme": "V2",
+   "size": [
+    1920,
+    1080
+   ],
+   "mouth_box": [
+    913,
+    363,
+    1131,
+    562
+   ],
+   "mouth_center": [
+    1022,
+    462
+   ]
+  },
+  "saif-table-V3": {
+   "file": "saif-table-V3.webp",
+   "char": "saif-table",
+   "viseme": "V3",
+   "size": [
+    1920,
+    1080
+   ],
+   "mouth_box": [
+    913,
+    363,
+    1131,
+    562
+   ],
+   "mouth_center": [
+    1022,
+    462
+   ]
+  },
+  "saif-table-V5": {
+   "file": "saif-table-V5.webp",
+   "char": "saif-table",
+   "viseme": "V5",
+   "size": [
+    1920,
+    1080
+   ],
+   "mouth_box": [
+    913,
+    363,
+    1131,
+    562
+   ],
+   "mouth_center": [
+    1022,
+    462
+   ]
+  },
+  "saif-table-VU": {
+   "file": "saif-table-VU.webp",
+   "char": "saif-table",
+   "viseme": "VU",
+   "size": [
+    1920,
+    1080
+   ],
+   "mouth_box": [
+    913,
+    363,
+    1131,
+    562
+   ],
+   "mouth_center": [
+    1022,
+    462
+   ]
+  }
+ },
+ "two_shots": {
+  "twoshot-majed-saif": {
+   "file": "twoshot-majed-saif.webp",
+   "size": [
+    1920,
+    1080
+   ],
+   "mouths": {
+    "majed": {
+     "mouth_box": [
+      690,
+      525,
+      840,
+      615
+     ],
+     "mouth_line_center": [
+      765,
+      550
+     ]
+    },
+    "saif": {
+     "mouth_box": [
+      1205,
+      511,
+      1355,
+      601
+     ],
+     "mouth_line_center": [
+      1280,
+      536
+     ]
+    }
+   }
+  },
+  "twoshot-majed-bariq": {
+   "file": "twoshot-majed-bariq.webp",
+   "size": [
+    1920,
+    1080
+   ],
+   "mouths": {
+    "majed": {
+     "mouth_box": [
+      680,
+      445,
+      830,
+      535
+     ],
+     "mouth_line_center": [
+      755,
+      470
+     ]
+    },
+    "bariq": {
+     "mouth_box": [
+      1165,
+      522,
+      1355,
+      642
+     ],
+     "mouth_line_center": [
+      1260,
+      552
+     ]
+    }
+   }
+  }
+ }
+}

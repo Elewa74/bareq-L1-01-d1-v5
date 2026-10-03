@@ -1,0 +1,208 @@
+{
+ "id": "bariq_L1-01_v5_song_ar",
+ "status": "draft_unapproved",
+ "date": "2026-10-02",
+ "duration": 76.04,
+ "bpm_target": 96,
+ "model": "eleven_music_v2_5 (custom lyrics) · flow https://elevenlabs.io/app/flows/O4nS4A6E5V0kXNObnx63 · take B of 2 (take A dropped verse 2 and «سَمِعْتُ فَرْقاً!»)",
+ "bed": "bariq_L1-01_v5_song-bed_ar.mp3 (demucs htdemucs no_vocals, same gain, same timeline)",
+ "timing": "start/end measured on the demucs vocal stem (silence gaps) + faster-whisper word timestamps; ±0.15 s",
+ "rules": "no question during the song · no letter name · only d1 words · «ماءْ» pausal · hums closed-lip (vocal-stem check: refrain hums ≈ 1.3–1.5 s with energy < 500 Hz, then an open «ماءْ»)",
+ "instrumental_intro": [
+  0.0,
+  9.65
+ ],
+ "lyrics_draft": "/home/claude/web/v5/prod/voice/song/lyrics_v5.txt",
+ "refrain_count": 10,
+ "lines": [
+  {
+   "n": 1,
+   "section": "chorus1",
+   "text": "مْـ… مْـ… ماءْ!",
+   "start": 9.65,
+   "end": 12.19,
+   "note": "refrain",
+   "refrain": true
+  },
+  {
+   "n": 2,
+   "section": "chorus1",
+   "text": "مْـ… مْـ… ماءْ!",
+   "start": 12.45,
+   "end": 14.6,
+   "note": "refrain",
+   "refrain": true
+  },
+  {
+   "n": 3,
+   "section": "chorus1",
+   "text": "الماءُ في الصَّحْنِ،",
+   "start": 15.0,
+   "end": 17.23,
+   "note": "",
+   "refrain": false
+  },
+  {
+   "n": 4,
+   "section": "chorus1",
+   "text": "مْـ… مْـ… ماءْ!",
+   "start": 17.46,
+   "end": 20.91,
+   "note": "refrain (+ a trailing hum 19.9–20.9)",
+   "refrain": true
+  },
+  {
+   "n": 5,
+   "section": "verse1",
+   "text": "تِكْ… تِكْ… هَذا صَوْتُ الماءِ،",
+   "start": 21.22,
+   "end": 24.46,
+   "note": "Majed points to the plate",
+   "refrain": false
+  },
+  {
+   "n": 6,
+   "section": "verse1",
+   "text": "الماءُ هُنا، في الصَّحْنِ!",
+   "start": 24.46,
+   "end": 26.82,
+   "note": "",
+   "refrain": false
+  },
+  {
+   "n": 7,
+   "section": "verse1",
+   "text": "تِكْ… تِكْ… هَذا صَوْتُ الماءِ،",
+   "start": 27.23,
+   "end": 29.94,
+   "note": "",
+   "refrain": false
+  },
+  {
+   "n": 8,
+   "section": "verse1",
+   "text": "الماءُ هُنا، في الصَّحْنِ!",
+   "start": 30.7,
+   "end": 33.08,
+   "note": "Majed returns the jug to its stand",
+   "refrain": false
+  },
+  {
+   "section": "verse2",
+   "text": "مْـ… مْـ… فَمي مُغْلَقٌ هَكَذا!",
+   "start": 34.74,
+   "end": 39.06,
+   "note": "«حركة مْـ»",
+   "n": 9,
+   "refrain": false
+  },
+  {
+   "section": "verse2",
+   "text": "مْـ… مْـ… فَمي مُغْلَقٌ هَكَذا!",
+   "start": 39.75,
+   "end": 43.36,
+   "note": "",
+   "n": 10,
+   "refrain": false
+  },
+  {
+   "n": 11,
+   "section": "verse2",
+   "text": "هَذا فَمُ سَيْفٍ،",
+   "start": 43.36,
+   "end": 45.6,
+   "note": "",
+   "refrain": false
+  },
+  {
+   "n": 12,
+   "section": "verse2",
+   "text": "مْـ… مْـ… مْـ…",
+   "start": 46.0,
+   "end": 49.04,
+   "note": "held hums",
+   "refrain": false
+  },
+  {
+   "n": 13,
+   "section": "chorus2",
+   "text": "مْـ… مْـ… ماءْ!",
+   "start": 49.96,
+   "end": 52.3,
+   "note": "refrain",
+   "refrain": true
+  },
+  {
+   "n": 14,
+   "section": "chorus2",
+   "text": "مْـ… مْـ… ماءْ!",
+   "start": 52.4,
+   "end": 54.72,
+   "note": "refrain",
+   "refrain": true
+  },
+  {
+   "n": 15,
+   "section": "chorus2",
+   "text": "سَمِعْتُ فَرْقاً! سَمِعْتُ فَرْقاً!",
+   "start": 54.97,
+   "end": 59.57,
+   "note": "Bariq jumps, arms open",
+   "refrain": false
+  },
+  {
+   "n": 16,
+   "section": "chorus2",
+   "text": "مْـ… مْـ… ماءْ!",
+   "start": 59.96,
+   "end": 61.99,
+   "note": "refrain",
+   "refrain": true
+  },
+  {
+   "n": 17,
+   "section": "final",
+   "text": "مْـ… مْـ… ماءْ!",
+   "start": 62.46,
+   "end": 64.71,
+   "note": "refrain",
+   "refrain": true
+  },
+  {
+   "n": 18,
+   "section": "final",
+   "text": "مْـ… مْـ… ماءْ!",
+   "start": 64.95,
+   "end": 67.1,
+   "note": "refrain",
+   "refrain": true
+  },
+  {
+   "n": 19,
+   "section": "final",
+   "text": "مْـ… مْـ… ماءْ!",
+   "start": 67.4,
+   "end": 69.4,
+   "note": "refrain (sung once more than the draft lyrics)",
+   "refrain": true
+  },
+  {
+   "n": 20,
+   "section": "final",
+   "text": "الماءُ في الصَّحْنِ،",
+   "start": 69.4,
+   "end": 71.82,
+   "note": "",
+   "refrain": false
+  },
+  {
+   "n": 21,
+   "section": "final",
+   "text": "مْـ… مْـ… ماءْ!",
+   "start": 72.46,
+   "end": 74.44,
+   "note": "last refrain — plate almost full",
+   "refrain": true
+  }
+ ]
+}
