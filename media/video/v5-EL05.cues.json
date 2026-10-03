@@ -1,0 +1,106 @@
+{
+ "video": "v5-EL05",
+ "src": "media/video/v5-EL05.mp4",
+ "poster": "media/video/v5-EL05.jpg",
+ "duration": 39.4,
+ "song": false,
+ "bpm": null,
+ "status": "draft_unapproved",
+ "source": "v5 directing script (shotlist_v5.json) · video_src/build_v5_videos.py · 1920×1080 24 fps",
+ "interim": "Grok motion pending: 5 shot(s) use the start-frame still — S01 S02 S05 S07 S09",
+ "scenes": [
+  {
+   "t": 0.0,
+   "title": "الأحجية",
+   "thumb": "v5/N01"
+  },
+  {
+   "t": 4.0,
+   "title": "اللوح",
+   "thumb": "v5/N08b"
+  },
+  {
+   "t": 13.0,
+   "title": "فم سيف",
+   "thumb": "v5/N09"
+  },
+  {
+   "t": 20.1,
+   "title": "البوصلة",
+   "thumb": "v5/N09"
+  },
+  {
+   "t": 27.4,
+   "title": "اللوحة",
+   "thumb": "v5/N09"
+  },
+  {
+   "t": 36.4,
+   "title": "الختام",
+   "thumb": "v5/N08b"
+  }
+ ],
+ "cues": [],
+ "lines": [
+  {
+   "id": "bariq_L1-01_intro-1_08_ar",
+   "t": 8.691,
+   "end": 10.533,
+   "sp": "MAJ",
+   "text": "هَذا صَوْتُ الماءِ."
+  },
+  {
+   "id": "bariq_L1-01_L1-build_01_ar",
+   "t": 13.692,
+   "end": 15.429,
+   "sp": "MAJ",
+   "text": "هَذا فَمُ سَيْفٍ."
+  },
+  {
+   "id": "bariq_L1-01_d1-EL05_01_ar",
+   "t": 20.789,
+   "end": 22.816,
+   "sp": "MAJ",
+   "text": "هَذِهِ بَوْصَلَةُ سَيْفٍ."
+  },
+  {
+   "id": "bariq_L1-01_intro-1_08_ar",
+   "t": 27.791,
+   "end": 29.633,
+   "sp": "MAJ",
+   "text": "هَذا صَوْتُ الماءِ."
+  },
+  {
+   "id": "bariq_L1-01_L1-build_01_ar",
+   "t": 30.292,
+   "end": 32.029,
+   "sp": "MAJ",
+   "text": "هَذا فَمُ سَيْفٍ."
+  },
+  {
+   "id": "bariq_L1-01_d1-EL05_01_ar",
+   "t": 32.689,
+   "end": 34.716,
+   "sp": "MAJ",
+   "text": "هَذِهِ بَوْصَلَةُ سَيْفٍ."
+  }
+ ],
+ "marks": [
+  {
+   "t": 10.7,
+   "text": "✋ ردِّدوا: «هَذا صَوْتُ الماءِ.»"
+  },
+  {
+   "t": 15.6,
+   "text": "✋ ردِّدوا: «هَذا فَمُ سَيْفٍ.»"
+  },
+  {
+   "t": 23.0,
+   "text": "✋ ردِّدوا: «هَذِهِ بَوْصَلَةُ سَيْفٍ.»"
+  },
+  {
+   "t": 34.9,
+   "text": "✋ قولوا مع ماجد"
+  }
+ ]
+}
