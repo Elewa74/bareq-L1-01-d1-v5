@@ -5,12 +5,12 @@
  "idea": "نردّد معاً بإيقاع: «مْـ… مْـ… ماءْ!»",
  "src": "media/video/v6-EL18.mp4",
  "poster": "media/video/v6-EL18.jpg",
- "duration": 36.542,
+ "duration": 38.417,
  "song": false,
  "bpm": 96,
  "status": "draft_unapproved",
  "source": "v6 EDL over the v5 material (video_src/build_v6_videos.py) · 1920×1080 24 fps",
- "interim": "Grok motion pending (G40 G41): 2 shot(s) use the start-frame still — S01 S12",
+ "interim": "Grok motion pending (G40 G41): 2 shot(s) use the start-frame still — S01 S13",
  "placeholders": null,
  "scenes": [
   {
@@ -63,7 +63,11 @@
    "title": "معاً"
   },
   {
-   "t": 34.042,
+   "t": 35.292,
+   "title": "عَرَفْنا… فَهِمْنا"
+  },
+  {
+   "t": 36.542,
    "title": "تصفيق"
   }
  ],
@@ -110,6 +114,48 @@
    "end": 34.387,
    "sp": "SAY",
    "text": "مْـ… مْـ… ماءْ!"
+  },
+  {
+   "id": "bariq_L1-01_v6_arafna_say_ar",
+   "t": 34.367,
+   "end": 35.415,
+   "sp": "SAY",
+   "text": "عَرَفْنا!"
+  },
+  {
+   "id": "bariq_L1-01_v6_arafna_maj_ar",
+   "t": 34.385,
+   "end": 35.398,
+   "sp": "MAJ",
+   "text": "عَرَفْنا!"
+  },
+  {
+   "id": "bariq_L1-01_v6_arafna_brq_ar",
+   "t": 34.402,
+   "end": 35.429,
+   "sp": "BRQ",
+   "text": "عَرَفْنا!"
+  },
+  {
+   "id": "bariq_L1-01_v6_fahimna_say_ar",
+   "t": 35.617,
+   "end": 36.664,
+   "sp": "SAY",
+   "text": "فَهِمْنا!"
+  },
+  {
+   "id": "bariq_L1-01_v6_fahimna_maj_ar",
+   "t": 35.635,
+   "end": 36.745,
+   "sp": "MAJ",
+   "text": "فَهِمْنا!"
+  },
+  {
+   "id": "bariq_L1-01_v6_fahimna_brq_ar",
+   "t": 35.652,
+   "end": 36.739,
+   "sp": "BRQ",
+   "text": "فَهِمْنا!"
   }
  ],
  "marks": [
@@ -128,6 +174,10 @@
   {
    "t": 30.368,
    "text": "✋ معاً: «مْـ… مْـ… ماءْ!»"
+  },
+  {
+   "t": 34.117,
+   "text": "✋ معاً: «عَرَفْنا!… فَهِمْنا!»"
   }
  ]
 }

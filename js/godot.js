@@ -64,6 +64,27 @@
 
 .elp-tool.bq-godot-fs2 .bq-ic svg, .bq-godot-fs3 svg { width: 100%; height: 100%; display: block; }
 .bq-godot-fs3 { display: inline-flex; align-items: center; gap: 6px; } .bq-godot-fs3 svg { width: 18px; height: 18px; }
+/* v6: اللوح الأفقي — القائمة تنطوي أثناء اللعبة · الهاتف العموديّ — بطاقة «أدِر الجهاز» */
+body.game-wide .hdr-menu-btn { display: inline-flex; }
+body.game-wide .lesson-grid { display: block; max-width: none; }
+body.game-wide .menu { position: fixed; top: 0; bottom: 0; inset-inline-start: 0; z-index: 60; width: min(360px, 88vw); height: auto; border-radius: 0; border: 0; padding: 12px 12px 24px;
+  box-shadow: -18px 0 48px rgba(0, 35, 61, .22); transform: translateX(105%); visibility: hidden; transition: transform .28s cubic-bezier(.2, .9, .3, 1), visibility 0s linear .28s; }
+body.game-wide .menu.is-open { transform: none; visibility: visible; transition: transform .28s cubic-bezier(.2, .9, .3, 1); }
+body.game-wide .menu-scrim { display: block; position: fixed; inset: 0; z-index: 59; background: rgba(0, 35, 61, .38); }
+body.game-wide .menu-scrim[hidden] { display: none !important; }
+body.game-wide .menu-x { display: grid; }
+.bq-godot { position: relative; }
+.bq-rotate { position: absolute; inset: -4px; z-index: 6; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; padding: 20px;
+  border-radius: var(--r-lg); background: radial-gradient(circle at 50% 35%, var(--sky-2, #33C1F2), var(--sky)); color: var(--white); text-align: center; min-height: 340px; }
+.bq-rotate-ic { width: 120px; height: 120px; display: block; animation: bqrot 2.4s ease-in-out infinite; }
+.bq-rotate-ic svg { width: 100%; height: 100%; }
+@keyframes bqrot { 0%, 30% { transform: rotate(0); } 60%, 100% { transform: rotate(-90deg); } }
+.bq-rotate-t { margin: 0; font: 700 28px/1.3 var(--ff-child); }
+.bq-rotate-go { border: 0; background: none; cursor: pointer; }
+.bq-rotate-go .cv-start-disc { width: 96px; height: 96px; display: grid; place-items: center; border-radius: 50%; background: var(--sun); color: var(--navy); box-shadow: 0 8px 0 var(--sun-edge); }
+.bq-rotate-go .cv-start-disc svg { width: 44px; height: 44px; }
+.bq-rotate-skip { color: var(--white); }
+@media (prefers-reduced-motion: reduce) { .bq-rotate-ic { animation: none; } }
 /* v6: «التالي» ينبض بعد ختام لعبة v6 */
 .elp-nav .nextbtn.is-ready { animation: bqnext 1.6s ease-in-out 3; }
 @keyframes bqnext { 0%,100% { transform: none; } 50% { transform: scale(1.06); box-shadow: 0 0 0 6px rgba(254,186,2,.35); } }
@@ -389,9 +410,46 @@
             else BQ.ui.endCard(stage, { title: 'أَحْسَنْتَ!', onReplay: () => BQ.open(meta.id, { skipCover: true, history: 'replace' }) });
           } });
         ctx.onCleanup(() => g.destroy());
+        wideAndRotate(g, ctx);
       }
     };
   };
+
+  /* v6 (مراجعة S5/S6): اللوح الأفقي حتى ١١٨٠ ⇒ القائمة الجانبية تنطوي ما دامت اللعبة تعمل (زرّ «العناصر» يعيدها درجاً) ·
+     الهاتف العموديّ ⇒ بطاقة كبيرة «أدِر الجهاز» + ملء الشاشة أفقياً، بدل لوحة ٣٤٤×١٩٤ */
+  const MQ_WIDE = '(max-width: 1180px) and (orientation: landscape) and (min-width: 768px)';
+  const MQ_PHONE = '(orientation: portrait) and (max-width: 600px)';
+  const mq = (q) => !!(window.matchMedia && matchMedia(q).matches);
+  const ROT = '<svg viewBox="0 0 96 96" aria-hidden="true"><rect x="30" y="14" width="36" height="62" rx="7" fill="none" stroke="currentColor" stroke-width="6"/><rect x="18" y="40" width="62" height="36" rx="7" fill="currentColor" opacity=".25"/><path d="M76 24a30 30 0 0 1 8 22" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"/><path d="M78 44l6 6 5-8" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  function wideAndRotate(g, ctx) {
+    const body = document.body;
+    const setWide = () => { const on = mq(MQ_WIDE); body.classList.toggle('game-wide', on); };
+    setWide();
+    let card = null;
+    const goFs = () => {
+      try {
+        const f = g.box.requestFullscreen || g.box.webkitRequestFullscreen;
+        if (f) { const pr = f.call(g.box); const lock = () => { try { const o = screen.orientation; if (o && o.lock) o.lock('landscape').catch(() => {}); } catch (e) { /* */ } };
+          if (pr && pr.then) pr.then(lock).catch(() => {}); else lock(); }
+      } catch (e) { /* ملء الشاشة غير متاح (iPhone): يكفي تدوير الجهاز */ }
+      hideCard();
+    };
+    const hideCard = () => { if (card) { card.remove(); card = null; } };
+    const showCard = () => {
+      if (card || !mq(MQ_PHONE)) return;
+      const canFs = !!(document.fullscreenEnabled || document.webkitFullscreenEnabled);
+      card = h('div.bq-rotate', { role: 'dialog', 'aria-label': 'أَدِرِ الجِهازَ لِتَلْعَبَ' },
+        h('span.bq-rotate-ic', { html: ROT }),
+        h('p.bq-rotate-t', null, 'أَدِرِ الجِهازَ'),
+        canFs ? h('button.bq-start.bq-rotate-go', { type: 'button', 'aria-label': 'العب بملء الشاشة', onclick: goFs }, h('span.cv-start-disc', { 'aria-hidden': 'true', html: FS })) : null,
+        h('button.bq-godot-link.bq-rotate-skip', { type: 'button', onclick: hideCard }, 'متابعة هكذا'));
+      g.el.append(card);
+    };
+    const onChange = () => { setWide(); if (mq(MQ_PHONE)) showCard(); else hideCard(); };
+    showCard();
+    window.addEventListener('resize', onChange);
+    ctx.onCleanup(() => { window.removeEventListener('resize', onChange); body.classList.remove('game-wide'); hideCard(); });
+  }
 
   /* رسائل إضافية من لعبة v6: {bq:'next'} ← العنصر التالي · {bq:'arc', arc} ← قوس يضيء قبل الختام (اختياري) */
   window.addEventListener('message', (e) => {

@@ -703,6 +703,7 @@
       row('كيف تصحّح', '<p>' + esc(g.correct) + '</p>', 'gd-fix') +
       row('ماذا تلاحظ وتسجّل', '<p>' + esc(g.observe) + '</p>') +
       row('المدّة', '<p>' + esc(g.time) + (meta.time_label ? ' (' + esc(meta.time_label) + ')' : '') + '</p>') +
+      (g.lite ? row('النسخة الخفيفة', '<p>' + esc(g.lite.replace(/^في النسخة الخفيفة: /, '')) + ' <i>(تعمل تلقائياً إن تعذّرت اللعبة على الجهاز.)</i></p>', 'gd-lite') : '') +
       ((meta.prints || []).length ? row('للطباعة', '<p>' + meta.prints.map((x) => '<a class="gd-print" href="' + esc(x.href) + '" target="_blank" rel="noopener">' + esc(x.label) + '</a>').join(' · ') + '</p>') : '') +
       pause + (meta.id === 'EL16' ? el16Note() : '');
   }
@@ -903,6 +904,7 @@
     if (!p.dataset.ready && window.BQ_PLAN) { window.BQ_PLAN.render(p); p.dataset.ready = '1'; }
     setHistory('plan', null, hmode || 'push');
     document.title = 'خطة الدرس · صوت الميم · بارق';
+    const lt = $('#lesson-title'); if (lt && lt.dataset.plan) lt.textContent = lt.dataset.plan; // اسم الدرس كاملاً في صفحة المعلّم وحدها
     window.scrollTo({ top: 0, behavior: 'auto' }); requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: 'auto' })); setTimeout(() => { if (BQ.state.current === 'plan' && !location.hash.slice(1).startsWith('lp')) window.scrollTo({ top: 0, behavior: 'auto' }); }, 120);
     const t = p.querySelector('.lp-bar-t h2'); if (t) { t.setAttribute('tabindex', '-1'); try { t.focus({ preventScroll: true }); } catch (e) { /* */ } }
   }
@@ -911,12 +913,13 @@
     document.body.classList.remove('show-plan');
     const lv = $('#lessonView'); if (lv) lv.hidden = false;
     const p = $('#plan'); if (p) p.hidden = true;
-    document.title = 'بارق · صوت الميم';
+    document.title = 'بارق · صَوْتُ «م»'; // v6: لا اسم الحرف على شاشات الطفل
+    const lt = $('#lesson-title'); if (lt && lt.dataset.child) lt.textContent = lt.dataset.child;
   }
 
   /* ---------- قائمة العناصر (درج على الهاتف/اللوح الطوليّ) و«للمعلّم» ---------- */
   const DRAWER_MQ = '(max-width: 767.98px), (pointer: coarse) and (orientation: portrait) and (max-width: 1100px)';
-  const isDrawer = () => !!(window.matchMedia && matchMedia(DRAWER_MQ).matches);
+  const isDrawer = () => !!(window.matchMedia && matchMedia(DRAWER_MQ).matches) || document.body.classList.contains('game-wide'); // v6: القائمة منطوية أثناء اللعبة على اللوح الأفقي
   function openMenu() {
     const m = $('.menu'), b = $('#menuBtn'), sc = $('#menuScrim'); if (!m || !isDrawer()) return;
     m.classList.add('is-open'); if (sc) sc.hidden = false; if (b) b.setAttribute('aria-expanded', 'true');

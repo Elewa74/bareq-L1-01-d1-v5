@@ -39,7 +39,8 @@
     [P + 'v5_isma_ilmis_ar']: { t: 'اسْمَعْ: مْـ… الْمِسِ الصّورَةَ!', sp: 'HAB' },
     [P + 'v5_mm_long_ar']: { t: 'مْـ', sp: 'SAY', ph: 'media/fx/ph_mm_long.mp3', alt: [P + 'snd-m_ar', 'L1-01_d2_s5_01'] },
     [P + 'v5_mm_long_b_ar']: { t: 'مْـ', sp: 'SAY', ph: 'media/fx/ph_mm_long_b.mp3', alt: ['L1-01_d2_s5_01', P + 'snd-m_ar'] },
-    /* تسجيل ثانٍ لـ«آ» لإعادة «تدرّب» (لا سطر له في الجرد بعد — بديل مؤقّت؛ يُستبدل حين يُسجَّل _b) */
+    /* تسجيل ثانٍ لـ«آ» لإعادة «تدرّب» و«العب» — v6: سُجِّل بصوت معتمد (bariq_L1-01_v6_aa_b_ar)؛ ph_aa_b بديل إن غاب الملفّ */
+    [P + 'v6_aa_b_ar']: { t: 'آ', sp: 'SAY', ph: 'media/fx/ph_aa_b.mp3', alt: [P + 'v5_aa_ar'] },
     'ix5:aa_b': { t: 'آ', sp: 'SAY', pseudo: true, ph: 'media/fx/ph_aa_b.mp3', alt: [P + 'v5_aa_ar'] },
   };
   X.NEW = NEW;
@@ -47,7 +48,7 @@
   const L = (X.L = {
     listenWithMe: P + 'v5_hayya_asghi_maai_ar', whichMouth: P + 'v5_ayyu_fam_ar', tryMouth: P + 'v5_jarrib_bifamik_ar',
     fromWhere: P + 'v5_min_ayna_yakhruj_ar', holdNose: P + 'v5_amsik_anfak_ar', mmMaa: P + 'v5_mm_mm_maa_ar',
-    wellDone: P + 'v5_ahsant_asghayt_ar', listenAgain: P + 'v5_asghi_marra_ar', aa: P + 'v5_aa_ar', aaB: 'ix5:aa_b',
+    wellDone: P + 'v5_ahsant_asghayt_ar', listenAgain: P + 'v5_asghi_marra_ar', aa: P + 'v5_aa_ar', aaB: P + 'v6_aa_b_ar',
     thisAndThis: P + 'v5_asghi_hatha_ar', mouthClosed: P + 'v5_fami_mughlaq_ar', yourTurn: P + 'v5_alan_dawruk_ar',
     hintM: P + 'v5_isma_alfam_ar', whereM: P + 'v5_hayya_ayna_m_ar', touchPic: P + 'v5_isma_ilmis_ar',
     mm: P + 'v5_mm_long_ar', mmB: P + 'v5_mm_long_b_ar',
