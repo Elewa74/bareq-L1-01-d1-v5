@@ -1,0 +1,106 @@
+{
+ "video": "v6-EL17",
+ "element": "EL17",
+ "title": "م قَطْرَةٌ",
+ "idea": "شكل «م» قطرة تسقط: رأس ثمّ ذيل (تُرى ولا تُقال)",
+ "src": "media/video/v6-EL17.mp4",
+ "poster": "media/video/v6-EL17.jpg",
+ "duration": 31.417,
+ "song": false,
+ "bpm": null,
+ "status": "draft_unapproved",
+ "source": "v6 EDL over the v5 material (video_src/build_v6_videos.py) · 1920×1080 24 fps",
+ "interim": null,
+ "placeholders": null,
+ "scenes": [
+  {
+   "t": 0.0,
+   "title": "الإبريق",
+   "thumb": "v5/ROOM5-T"
+  },
+  {
+   "t": 3.0,
+   "title": "قطرة معلّقة",
+   "thumb": "v5/ROOM5-T"
+  },
+  {
+   "t": 7.0,
+   "title": "تتجمّد… «م»",
+   "thumb": "v5/ROOM5-T"
+  },
+  {
+   "t": 12.0,
+   "title": "«…ماءْ!»",
+   "thumb": "v5/ROOM5-T"
+  },
+  {
+   "t": 16.0,
+   "title": "سيف يكتب",
+   "thumb": "v5/N06"
+  },
+  {
+   "t": 21.0,
+   "title": "ثلاث خانات",
+   "thumb": "v5/ROOM5-T"
+  }
+ ],
+ "cues": [],
+ "lines": [
+  {
+   "id": "bariq_L1-01_v5_mm_draw_ar",
+   "t": 3.25,
+   "end": 6.75,
+   "sp": "SAY",
+   "text": "مْـ"
+  },
+  {
+   "id": "bariq_L1-01_v5_maa_ar",
+   "t": 13.17,
+   "end": 13.93,
+   "sp": "SAY",
+   "text": "ماءْ."
+  },
+  {
+   "id": "bariq_L1-01_v5_mm_draw_ar",
+   "t": 16.85,
+   "end": 20.35,
+   "sp": "SAY",
+   "text": "مْـ"
+  },
+  {
+   "id": "bariq_L1-01_v5_mm_long_ar",
+   "t": 21.5,
+   "end": 23.15,
+   "sp": "SAY",
+   "text": "مْـ"
+  },
+  {
+   "id": "bariq_L1-01_v5_mm_long_b_ar",
+   "t": 24.7,
+   "end": 26.47,
+   "sp": "SAY",
+   "text": "مْـ"
+  },
+  {
+   "id": "bariq_L1-01_v5_mm_maa_ar",
+   "t": 28.015,
+   "end": 30.606,
+   "sp": "SAY",
+   "text": "مْـ… ماءْ."
+  }
+ ],
+ "marks": [
+  {
+   "t": 14.6,
+   "text": "✋ ردِّدوا: «مْـ… ماءْ.» — رأس ثمّ ذيل"
+  },
+  {
+   "t": 20.5,
+   "text": "✋ ارسموها في الهواء: من النقطة الخضراء، رأس ثمّ ذيل"
+  },
+  {
+   "t": 30.8,
+   "text": "✋ قولوا مع كلّ خانة"
+  }
+ ]
+}

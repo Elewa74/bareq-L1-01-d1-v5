@@ -1,0 +1,61 @@
+{
+ "video": "v6-EL06",
+ "element": "EL06",
+ "title": "أغنّي",
+ "idea": "نغنّي اللازمة «مْـ… مْـ… ماءْ!» ونصفّق",
+ "src": "media/video/v6-EL06.mp4",
+ "poster": "media/video/v6-EL06.jpg",
+ "duration": 42.583,
+ "song": true,
+ "bpm": 96,
+ "status": "draft_unapproved",
+ "source": "v6 EDL over the v5 material (video_src/build_v6_videos.py) · 1920×1080 24 fps",
+ "interim": "Grok motion pending (G16 G26 G28 G30a G30b G30d1 G30d2 G31): 10 shot(s) use the start-frame still — EL06:S01 EL06:S02 EL06:S04 EL06:S09 EL06:S10 EL06:S11 EL06:S12 EL06:S14 EL06:S15 EL06:S17",
+ "placeholders": null,
+ "scenes": [
+  {
+   "t": 0.0,
+   "title": "الإيقاع",
+   "thumb": "v5/P03"
+  },
+  {
+   "t": 1.172,
+   "title": "اللازمة",
+   "thumb": "v5/P11C"
+  },
+  {
+   "t": 12.5,
+   "title": "حركة مْـ",
+   "thumb": "v5/P12"
+  },
+  {
+   "t": 28.987,
+   "title": "اللازمة ٢",
+   "thumb": "v5/P12"
+  },
+  {
+   "t": 38.987,
+   "title": "الختام"
+  }
+ ],
+ "cues": [],
+ "lines": [],
+ "marks": [
+  {
+   "t": 1.172,
+   "text": "✋ (اختياري) غنّوا اللازمة وصفّقوا"
+  },
+  {
+   "t": 12.5,
+   "text": "✋ (اختياري) حركة مْـ مع سيف"
+  },
+  {
+   "t": 29.0,
+   "text": "✋ (اختياري) غنّوا اللازمة"
+  },
+  {
+   "t": 39.0,
+   "text": "✋ (اختياري) غنّوا اللازمة الأخيرة"
+  }
+ ]
+}
