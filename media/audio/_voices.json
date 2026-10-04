@@ -13,6 +13,14 @@
    "pipeline": "/home/claude/web/v5/prod/voice/ (export_v5.py, sustain.py, analyze.py, asr.py)",
    "checks": "ASR faster-whisper small on every take and every final file; spectral: hums energy <500 Hz ≥ 0.9, 700–1500 Hz ≤ 0.05 (approved snd-m: 0.96/0.014; «آ»: 0.07/0.42); pitch continuity (pyin) on held hums",
    "note": "2 takes per line, better take picked. Hums written «مْمْمْ» untagged in the prompt, never «ميم». Retired-in-v5 list + per-video voice map: /home/claude/web/v5/prod/voice/V5_VIDEO_VOICE_MAP.json"
+  },
+  "loudness_2026-10-04": {
+   "target": "voices −16 LUFS ±1, true peak ≤ −1 dBTP (music/sfx/song/mix untouched)",
+   "changed_files": 67,
+   "report": "/home/claude/web/v5/prod6/voice/norm16_report.json",
+   "backup": "/home/claude/web/v5/prod6/voice/audio_before_norm16/",
+   "changed_list": "/home/claude/web/v5/prod6/voice/norm16_changed.txt",
+   "note": "6 peaky files (d1-EL02_04, d1-FB_04, ins-listen, v5_asghi_hatha, v5_asghi_marra, v5_hayya_asghi_maai) re-done with a 3:1 compressor before gain + limiter (≤ 1.9 dB limiting)"
   }
  },
  "files": {
@@ -1054,6 +1062,19 @@
    "status": "v5_generated_draft",
    "dur": 76.07,
    "used_in": "#9 EL06"
+  },
+  "bariq_L1-01_v6_majed_mm_ar": {
+   "speaker": "ماجد",
+   "voice_name": "Majed N1 Zpl3Nt0o92Aq8JSlaPvh",
+   "model": "eleven_v4",
+   "take": "B of 2",
+   "text": "مْـ",
+   "tagged_text": "مْمْمْمْمْمْمْمْمْمْ",
+   "status": "v6_generated_draft",
+   "dur": 1.7,
+   "post": "closed-lip hum held with rubberband (tempo 0.37, formants preserved, continuous falling pitch) → hum ≈ 1.57 s; loudnorm −16 LUFS",
+   "checks": "spectral <500 Hz 0.96 · 700–1500 Hz 0.03; pyin continuous (max jump 0.5 st, no gaps); −16.4 LUFS, peak −8.7 dBFS",
+   "used_in": "v6 (Majed models «مْـ»)"
   }
  }
 }

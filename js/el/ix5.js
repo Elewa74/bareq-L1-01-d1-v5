@@ -465,6 +465,11 @@
           if (tries === 1) {
             if (opt.onWrong1) await opt.onWrong1(it, b);
             b.classList.remove('is-dim'); busy = false; C.lock(false);
+          } else if (opt.reveal === false) { // v6: قياس محايد (#10) — لا توهّج ولا كشف للصواب؛ الجولة تنتهي بهدوء
+            C.btns.forEach((x) => x.classList.add('is-dim'));
+            if (opt.onWrong2) await opt.onWrong2(it, b, null);
+            await S.sleep(400);
+            resolve({ res: 'missed', picks, C });
           } else {
             C.btns.forEach((x) => { if (x !== cb) x.classList.add('is-dim'); });
             cb.classList.add('is-glow'); anim(cb, 'fx-pulse', 1300);

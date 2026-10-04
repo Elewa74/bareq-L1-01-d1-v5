@@ -1284,7 +1284,7 @@
         const meta = ctx.meta, vid = meta.video || ('v5-' + id);
         const { alive } = V.liveGuard(ctx);
         ctx.frame.dataset.kind = 'video';
-        const coverSrc = (BQ.D.covers || []).includes(id) ? 'media/cover/' + id + '.webp' : '';
+        const coverSrc = meta.cover_file || ((BQ.D.covers || []).includes(id) ? 'media/cover/' + id + '.webp' : (meta.hero && BQ.hasImg(meta.hero) ? BQ.img(meta.hero) : '')); // v6: غلاف مستعار/صورة بطلة
         let finished = false, P = null;
         const next = () => { BQ.audio.unlock(); BQ.goNext(); };
         const finish = () => { if (finished || !alive()) return; finished = true; ctx.done(); };

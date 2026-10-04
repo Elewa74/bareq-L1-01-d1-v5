@@ -5,8 +5,9 @@
    الجولات: ج١ «مْـ» ← [فم مطبق ✓ · فم مفتوح · يد تطرق] · ج٢ «ماءْ» ← [ماء ✓ · فم مفتوح · بوصلة] · ج٣ «آ» ← [فم مطبق · فم مفتوح ✓ · بوصلة]
            · ج٤ طق طق ← [يد تطرق ✓ · فم مطبق · ماء] · ج٥ «مْـ» بتسجيل ثانٍ ← [فم مطبق ✓ · فم مفتوح · بوصلة]
    (أربع جولات من خمس فيها مشتِّت كلامي «آ» بفم مفتوح، ولا جولة يُسمَع فيها «مْـ» والماء بين الخيارات).
-   تغذية: محاولتان؛ خطأ ١ ← «اسْمَعْ جَيِّداً: مْـ… الفَمُ مُغْلَقٌ.» (جولات «مْـ») أو «هَيّا، أَصْغِ مَرَّةً أُخْرى!» ويُعاد الصوت · خطأ ٢ ← تخفت الصور إلّا الصحيحة
-   + «أَصْغِ: هَذا، وَهَذا.» ويُسجَّل «بمساعدة». العتبة ٤/٥ من المحاولة الأولى؛ أقلّ منها ← إعادة واحدة بتسجيلات ثانية ثم ملاحظة دعم في دليل المعلّم.
+   تغذية v6 (PLAN_v6: القياس محايد بلا تلميح يكشف الجواب، كمحطّة Godot st6_listen): خطأ ١ ← «هَيّا، أَصْغِ مَرَّةً أُخْرى!» ويُعاد الصوت
+   · خطأ ٢ ← تنتهي الجولة بهدوء (تخفت الصور كلّها، بلا توهّج للصواب ولا «أَصْغِ: هَذا، وَهَذا.») وتُسجَّل «لم يُصِب».
+   الخرزة تضيء لكلّ جولة (تقدّم لا درجة): ساطعة من المحاولة الأولى وناعمة لغيرها. العتبة ٤/٥ من المحاولة الأولى؛ أقلّ منها ← إعادة واحدة بتسجيلات ثانية ثم ملاحظة دعم في دليل المعلّم.
    النهاية: الخرزات الخمس مضاءة وبارق يصفّق «أَحْسَنْتَ! أَصْغَيْتَ جَيِّداً!» — لا رقم أمام الطفل؛ النتيجة في دليل المعلّم (ix5-EL13). */
 (function () {
   'use strict';
@@ -25,6 +26,7 @@
 @keyframes x13Needle { 0%, 100% { transform: rotate(-12deg); } 50% { transform: rotate(14deg); } }
 .x13 .x13-comp i { position: absolute; width: 17%; height: 17%; margin: -8.5% 0 0 -8.5%; border-radius: 50%; background: #7A5216; box-shadow: inset 0 2px 3px rgba(0,0,0,.35); transition: background .4s, box-shadow .4s, transform .3s; }
 .x13 .x13-comp i.on { background: radial-gradient(circle at 35% 35%, #FFF6C4, var(--sun)); box-shadow: 0 0 10px var(--sun); transform: scale(1.15); }
+.x13 .x13-comp i.on.soft { background: radial-gradient(circle at 35% 35%, #FFF6DD, #E9C27A); box-shadow: none; transform: none; }
 .x13 .x13-win { display: flex; align-items: flex-end; justify-content: center; gap: clamp(8px, 3cqi, 30px); padding: 12px 18px 0; border-radius: 28px; background: linear-gradient(180deg, #FFF8E6, #FFE9B8); box-shadow: 0 10px 26px var(--shade); animation: x5In .35s ease-out both; }
 .x13 .x13-win img.maj { height: min(30cqi, calc(var(--x5-h) - 360px), 230px); min-height: 90px; display: block; }
 .x13 .x13-win .bq-brq { width: min(20cqi, calc(var(--x5-h) - 420px), 150px); min-width: 70px; display: block; }
@@ -58,16 +60,16 @@
       R(L.knockB, 'knock', ['knock', 'mouthM', 'water']),
       R(L.mm, 'mouthM', ['mouthM', 'mouthA', 'compass'], true),
     ];
-    X.prep([L.mm, L.mmB, L.aa, L.aaB, L.hintM, L.listenAgain, L.thisAndThis, L.wellDone]);
+    X.prep([L.mm, L.mmB, L.aa, L.aaB, L.listenAgain, L.wellDone]);
     X.prepArt(['mouthM', 'mouthA', 'knock', 'water', 'compass']);
     const NAMES = ['«مْـ»', '«ماءْ»', '«آ»', 'طق طق', '«مْـ» (تسجيل ثانٍ)'];
-    const RES = { first: 'من المحاولة الأولى', second: 'بعد تلميح', shown: 'بمساعدة (عُرض الصواب)' };
+    const RES = { first: 'من المحاولة الأولى', second: 'بعد محاولة ثانية', missed: 'لم يُصِب (انتهت الجولة بلا كشف)', shown: 'لم يُصِب' };
     const rec = { pass1: [], pass2: null, passed: null, support: false };
     X.guide(ctx, {
       goal: 'يميّز «مْـ» حين يسمعه من صوت كلامي آخر («آ» بفم مفتوح) ومن أصوات الأشياء: يلمس صورته من ثلاث — العتبة ٤ من ٥ من المحاولة الأولى.',
       steps: ['بارق يلعب جولة تجريبية بصوت شيء (طرق ← اليد) — غير محتسبة.', 'خمس جولات: «مْـ» · «ماءْ» · «آ» · طق طق · «مْـ» بتسجيل ثانٍ — أربع منها فيها مشتِّت كلامي (فم مفتوح «آ»).', 'خرزات البوصلة تضيء جولةً جولة — تقدّم لا درجة؛ لا رقم أمام الطفل.'],
       teacher: ['هذا النشاط المرصود الوحيد في الدرس: دع الطفل يجيب وحده، ولا تلمّح بالكلام أو الإشارة.', 'زرّ الأذن يعيد الصوت متى شاء الطفل (الإعادة لا تُحتسب خطأ).', 'النتيجة تظهر هنا في الدليل عند النهاية، وتُحفظ لتقرير «اختبر نفسك».'],
-      fb: 'محاولتان لكلّ جولة · خطأ أوّل: تلميح يعلّل في جولات «مْـ» («اسْمَعْ جَيِّداً: مْـ… الفَمُ مُغْلَقٌ.») أو «هَيّا، أَصْغِ مَرَّةً أُخْرى!» ويُعاد الصوت · خطأ ثانٍ: تخفت الصور إلّا الصحيحة + «أَصْغِ: هَذا، وَهَذا.» · أقلّ من ٤/٥: إعادة واحدة بتسجيلات ثانية.',
+      fb: 'قياس محايد بلا تلميح يكشف الجواب · خطأ أوّل: «هَيّا، أَصْغِ مَرَّةً أُخْرى!» ويُعاد الصوت · خطأ ثانٍ: تنتهي الجولة بهدوء بلا كشف للصواب · تُحتسب المحاولة الأولى وحدها · أقلّ من ٤/٥: إعادة واحدة بتسجيلات ثانية.',
       note: 'موضع توقّف مقترح بعد هذا العنصر (دليل المعلّم).',
     });
     const firstOf = (a) => a.filter((r) => r === 'first').length;
@@ -77,7 +79,7 @@
       const verdict = rec.passed == null ? '' : rec.passed
         ? (rec.pass2 ? '<p class="goal"><b>بلغ العتبة في الإعادة</b> بتسجيلات ثانية (لم يبلغها في الجولات الخمس الأولى) — راقبه في «اختبر نفسك».</p>'
           : '<p class="goal"><b>بلغ العتبة:</b> يميّز «مْـ» من «آ» ومن أصوات الأشياء (٤ من ٥ أو أكثر من المحاولة الأولى).</p>')
-        : '<p class="goal"><b>لم يبلغ العتبة بعد.</b> ' + (rec.support ? 'يحتاج دعماً: أعِد معه «استمع وتعلّم» و«لاحظ وتعلّم» مرّة قصيرة، ثم «تدرّب» في يوم لاحق.' : '') + '</p>';
+        : '<p class="goal"><b>لم يبلغ العتبة بعد.</b> ' + (rec.support ? 'يحتاج دعماً: أعِد معه «استمع وتعلّم» و«فمي مغلق» و«تحدّث» مرّة قصيرة، ثم «تدرّب» في يوم لاحق.' : '') + '</p>';
       X.result(ctx, verdict + '<p><b>نتيجة «تدرّب» (المرصود):</b> ' + X.AR(firstOf(rec.pass1)) + ' من ٥ من المحاولة الأولى<br>' + p1 + p2 + '</p>');
     };
 
@@ -90,8 +92,8 @@
     const head = h('div.x13-head', null, ear, comp);
     const body = h('div');
     root.append(head, body);
-    const bead = (i) => { if (beads[i]) { beads[i].classList.add('on'); BQ.audio.fx(L.bead, 0.5); } };
-    const beadsReset = () => beads.forEach((b) => b.classList.remove('on'));
+    const bead = (i, soft) => { if (beads[i]) { beads[i].classList.add('on'); beads[i].classList.toggle('soft', !!soft); BQ.audio.fx(L.bead, soft ? 0.25 : 0.5); } };
+    const beadsReset = () => beads.forEach((b) => b.classList.remove('on', 'soft'));
     ctx.instruction(X.lineText(L.where));
     ctx.onReplay(async () => { if (busy || !stim) return; busy = true; await S.say(L.where); await S.stim(stim); busy = false; });
 
@@ -127,14 +129,9 @@
         items: r.keys.map((k) => ({ key: k, aria: ARIA[k] })), correct: r.correct,
         prompt: async () => { busy = true; await S.sleep(250); await S.say(L.where); await S.stim(r.stim); busy = false; },
         onRight: async () => { await S.say(L.yes); },
-        onWrong1: async () => { busy = true; if (r.m) await S.say(L.hintM); else await S.say(L.listenAgain); await S.stim(r.stim); busy = false; },
-        onWrong2: async (it, b, cb) => {
-          busy = true;
-          await S.say(L.thisAndThis);
-          cb.classList.add('is-glow'); await S.stim(r.stim); cb.classList.remove('is-glow'); await S.sleep(250);
-          b.classList.remove('is-dim'); b.classList.add('is-heard'); await S.stim(SND[it.key]); b.classList.remove('is-heard'); b.classList.add('is-dim');
-          busy = false;
-        },
+        reveal: false, // v6: محايد — لا يتوهّج الصواب بعد الخطأ الثاني
+        onWrong1: async () => { busy = true; await S.say(L.listenAgain); await S.stim(r.stim); busy = false; },
+        onWrong2: async () => { busy = true; await S.sleep(350); busy = false; },
       });
       busy = true;
       return out.res;
@@ -143,8 +140,9 @@
     async function pass(list, store) {
       beadsReset();
       for (let i = 0; i < list.length; i++) {
-        store.push(await round(list[i]));
-        bead(i); showRes(); X.rec(ID).set(rec);
+        const res = await round(list[i]);
+        store.push(res);
+        bead(i, res !== 'first'); showRes(); X.rec(ID).set(rec);
         await S.sleep(450);
       }
       return firstOf(store);

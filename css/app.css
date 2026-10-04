@@ -662,3 +662,24 @@ button, a, label, input, summary, [role="button"], .bq-choice, .item { touch-act
 .bq-steps { direction: rtl; flex-direction: row; unicode-bidi: isolate; }
 /* v5 (المنسّق): كلّ زرّ .bq-btn ≥ ٦٠ بكسل في كلّ عمر وكلّ عنصر — يغلب أيّ قاعدة محقونة أصغر */
 .page-root .bq-btn, .bq-btn { min-height: 60px !important; }
+
+/* v6: «دليل المعلّم» الكامل (ثمانية حقول) */
+.elp-adult ol.do { margin: 0 0 8px; padding-inline-start: 1.3em; display: grid; gap: 4px; }
+.elp-adult-body .gd-row { margin: 0 0 10px; }
+.elp-adult-body .gd-row > p:not(.lbl) { margin: 0 0 4px; font-size: 14.5px; line-height: 1.8; color: var(--ink); }
+.elp-adult-body .gd-row .lbl { border-inline-start: 4px solid var(--sun); padding-inline-start: 8px; }
+.elp-adult-body .gd-fix > p:not(.lbl) { background: #F2FAF6; border-radius: 12px; padding: 8px 12px; }
+.elp-adult-body .bq-godot-res { background: var(--sky-wash, #E3F5FD); border-radius: 12px; padding: 8px 12px; margin: 0 0 12px; }
+.elp-adult-body .bq-godot-res .hands { margin: 4px 0 0; }
+/* v6: زرّ البوصلة في الرأس — على الهاتف الضيّق يبقى عنوان الدرس مقروءاً (حلقة التقدّم بلا العدد) */
+@media (max-width: 430px) {
+  .hdr-in { gap: 8px; }
+  .hdr-tools { gap: 5px; }
+  .hdr-progress { padding-inline: 3px; }
+  .hdr-progress-t { display: none; }
+  .hdr-compass { width: 40px; height: 40px; padding: 2px; }
+  .hdr-compass svg { width: 34px; height: 34px; }
+}
+@media (max-width: 370px) { .hdr-logo img { width: 62px; } .hdr-lesson { padding-inline-start: 6px; } }
+/* v6 (مراجعة): لا «صَوْتُ المِيمِ» على شاشات الطفل أثناء الأنشطة — الشعار وحده؛ العنوان يبقى لقارئ الشاشة وفي «خطة الدرس» */
+body:not(.show-plan) .hdr-lesson { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; padding: 0; }

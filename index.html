@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#FFFFFF">
-<title>بارق · صوت الميم — v5 مسوّدة مؤقّتة</title>
+<title>بارق · صوت الميم — v6 مسوّدة مؤقّتة</title>
 <link rel="preload" href="assets/fonts/web/ReadexPro-300-700-arabic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/web/NotoNaskhArabic-500-arabic.woff2" as="font" type="font/woff2" crossorigin>
-<meta name="description" content="عيّنة الدرس الأول L1-01-d1 (v5) على هيئة منصّة بارق — 16 عنصراً: 7 فيديو و9 تفاعلي، وخطة الدرس">
+<meta name="description" content="عيّنة الدرس الأول L1-01-d1 (v6) على هيئة منصّة بارق — 19 عنصراً: 10 فيديو و9 ألعاب، وخطة الدرس ودليل المعلّم">
 <link rel="stylesheet" href="css/fonts.css">
 <link rel="stylesheet" href="css/tokens.css">
 <link rel="stylesheet" href="css/shell.css">
@@ -29,9 +29,10 @@
       </div>
     </div>
     <div class="hdr-tools">
+      <button type="button" class="hdr-compass" id="compassBtn" aria-label="بوصلة الأصوات"></button>
       <div class="hdr-progress" id="progress" role="img" aria-label="العناصر المنجزة">
         <svg viewBox="0 0 44 44" aria-hidden="true"><circle class="trk" cx="22" cy="22" r="18"/><circle class="val" cx="22" cy="22" r="18"/></svg>
-        <span class="hdr-progress-t"><b>٠</b><small>/ ١٦</small></span>
+        <span class="hdr-progress-t"><b>٠</b><small>/ ١٩</small></span>
       </div>
       <button type="button" class="hdr-btn hdr-menu-btn" id="menuBtn" aria-expanded="false" aria-controls="lessonMenu"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="7" y="8" width="13" height="13" rx="3.5"/><rect x="28" y="8" width="13" height="13" rx="3.5"/><rect x="7" y="27" width="13" height="13" rx="3.5"/><rect x="28" y="27" width="13" height="13" rx="3.5"/></svg><span>العناصر</span></button>
       <div class="hdr-adult">
@@ -45,7 +46,7 @@
           </fieldset>
           <a class="hdr-pop-link" id="planBtn" href="#plan"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l4 4v14H6z M14 3v5h5 M9 12h7 M9 16h7"/></svg><span>خطة الدرس ودليل المعلّم<small>صفحة مستقلّة للمعلّم</small></span></a>
           <button type="button" class="hdr-pop-link is-quiet" id="resetBtn"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M12 24a12 12 0 1 0 4-9"/><path d="M9 8v10h10"/></svg><span>بدء من جديد<small>يمسح تقدّم الدرس على هذا الجهاز</small></span></button>
-          <p class="hdr-pop-note"><b>النسخة v5 — مسوّدة للمراجعة</b> · L1-01-d1 · الصور والمقاطع مولَّدة آلياً، والأصوات مؤقّتة؛ ما لم يُنتَج بعد يظهر «قيد الإنتاج».</p>
+          <p class="hdr-pop-note"><b>النسخة v6 — مسوّدة للمراجعة</b> · L1-01-d1 · ١٠ مقاطع قصيرة و٩ ألعاب و«بوصلة الأصوات»؛ الصور والمقاطع مولَّدة آلياً، والأصوات مؤقّتة؛ ما لم يُنتَج بعد يظهر «قيد الإنتاج».</p>
         </div>
       </div>
     </div>
@@ -56,7 +57,7 @@
   <div class="lesson-grid">
     <div class="menu-scrim" id="menuScrim" hidden></div>
     <nav class="menu" id="lessonMenu" aria-label="عناصر الدرس">
-      <div class="menu-head"><span>عناصر الدرس</span><span class="menu-count" id="menuCount">٠ / ١٦</span><button type="button" class="menu-x" id="menuClose" aria-label="إغلاق"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M14 14l20 20M34 14 14 34"/></svg></button></div>
+      <div class="menu-head"><span>عناصر الدرس</span><span class="menu-count" id="menuCount">٠ / ١٩</span><button type="button" class="menu-x" id="menuClose" aria-label="إغلاق"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M14 14l20 20M34 14 14 34"/></svg></button></div>
       <ul id="menu" class="menu-list"></ul>
     </nav>
     <section id="content" class="content" aria-label="النشاط المفتوح" tabindex="-1"></section>
@@ -69,7 +70,7 @@
   <div class="ft-in">
     <span class="ft-logo"><img src="assets/logo/bareq-logo-owner.png" alt="بارق" width="96" height="31"></span>
     <p>منصّة بارق لتعليم القراءة والكتابة بالعربية للأطفال · الحقوق محفوظة © ٢٠٢٦</p>
-    <p class="status">عيّنة L1-01-d1 · <b>v5 مسوّدة مؤقّتة — مقاطع الحركة قيد الإنتاج</b> · draft_unapproved · نسخة موازية للمراجعة</p>
+    <p class="status">عيّنة L1-01-d1 · <b>v6 مسوّدة مؤقّتة — مقاطع الحركة قيد الإنتاج</b> · draft_unapproved · نسخة موازية للمراجعة</p>
   </div>
 </footer>
 </div>
@@ -80,7 +81,10 @@
 <script src="js/plan.js"></script>
 <script src="js/kit.js"></script>
 <script src="js/el/EL01.js"></script>
-<script src="js/el/EL02.js"></script>
+<script src="js/el/EL02A.js"></script>
+<script src="js/el/EL02B.js"></script>
+<script src="js/el/EL17.js"></script>
+<script src="js/el/EL18.js"></script>
 <script src="js/el/EL03.js"></script>
 <script src="js/el/EL04.js"></script>
 <script src="js/el/EL05.js"></script>

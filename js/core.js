@@ -1,4 +1,7 @@
-/* core.js — محرّك صفحة الدرس (بارق · L1-01-d1 · v0-8 → v5)
+/* core.js — محرّك صفحة الدرس (بارق · L1-01-d1 · v0-8 → v5 → v6)
+   v6 (PLAN_v6): ١٩ عنصراً من البيانات (فيديو ١٠ · لعبة ٩) · شارة «فيديو» / «لعبة» · «دليل المعلّم» الكامل لكلّ عنصر من meta.guide
+   (الوصف · الغرض التعليمي · المنهجية · التشغيل · المحاولات · التصحيح · الملاحظة · المدّة) · meta.cover_file / meta.hero للعناصر الجديدة
+   · D.alias (EL02 ← EL02A) · «بدء من جديد» يمسح البوصلة أيضاً (BQ.compass في godot.js).
    v5 (اللوحات v5 · الإطار v2): ترتيب ١–١٦ من البيانات (menu) · شارة النوع «فيديو» / «تفاعلي» في القائمة والرأس والغلاف ·
    الغلاف «العنصر n مِنْ ١٦» · «اختبر نفسك» غلافه رسم + عنوان + «ابْدَأْ» فقط (الموعد والمعاينة في دليل المعلّم) · BQ.typeOf(id).
    الواجهة العامة: window.BQ — تستعملها ملفات العناصر js/el/ELxx.js عبر BQ.register(id, {render(stage, ctx)}).
@@ -70,11 +73,11 @@
   BQ.line = (id) => D.lines[id] || null;
   /** v5: نوع العنصر — 'video' | 'interactive' (من البيانات) */
   BQ.typeOf = (id) => ((D.elements.find((e) => e.id === id) || {}).kind === 'video' ? 'video' : 'interactive');
-  BQ.typeLabel = (id) => (BQ.typeOf(id) === 'video' ? 'فيديو' : 'تفاعلي');
+  BQ.typeLabel = (id) => (BQ.typeOf(id) === 'video' ? 'فيديو' : 'لعبة'); // v6: العناصر التفاعلية التسع ألعاب
   const typeBadge = (id, cls) => h('span.bq-type.is-' + BQ.typeOf(id) + (cls ? '.' + cls : ''), { 'aria-label': 'النوع: ' + BQ.typeLabel(id) },
     h('span.bq-type-ic', { 'aria-hidden': 'true', html: BQ.typeOf(id) === 'video'
       ? '<svg viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg>'
-      : '<svg viewBox="0 0 24 24"><path d="M9 11V5.5a1.6 1.6 0 0 1 3.2 0V10l4.6.9c1 .2 1.7 1.1 1.6 2.1l-.6 5.2a2.3 2.3 0 0 1-2.3 2H11a2.4 2.4 0 0 1-1.9-1l-3.4-4.6a1.5 1.5 0 0 1 2.2-2z" fill="currentColor"/></svg>' }),
+      : '<svg viewBox="0 0 24 24"><path d="M7.2 7h9.6a4.6 4.6 0 0 1 4.5 3.7l1 5.3a2.6 2.6 0 0 1-4.5 2.2L15.5 16h-7l-2.3 2.2A2.6 2.6 0 0 1 1.7 16l1-5.3A4.6 4.6 0 0 1 7.2 7z" fill="currentColor"/><path d="M7.5 10v4M5.5 12h4" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/><circle cx="16" cy="11" r="1.1" fill="#fff"/><circle cx="18" cy="13" r="1.1" fill="#fff"/></svg>' }),
     h('span', { 'aria-hidden': 'true' }, BQ.typeLabel(id)));
   BQ.typeBadge = typeBadge;
   const audioSet = new Set(D.audio);
@@ -158,7 +161,10 @@
     const cap = A.capEl; if (!cap) return;
     const L = id && BQ.line(id);
     if (!L || !L.t || L.sp === 'مؤثّر' || L.sp === 'واجهة') { cap.hidden = true; cap.textContent = ''; return; }
-    cap.replaceChildren(SPEAKER[L.sp] ? h('b', null, SPEAKER[L.sp] + ': ') : '', L.t.replace(/⏸\S*/g, ' '));
+    // v6: النصّ المصاحب للطفل بلا إرشادات الإنتاج بين أقواس («مْـ (ممدودة…)» ← «مْـ»)
+    const t = L.t.replace(/⏸\S*/g, ' ').replace(/\s*[(\[][^)\]]*[)\]]/g, '').replace(/\s{2,}/g, ' ').trim();
+    if (!t) { cap.hidden = true; cap.textContent = ''; return; }
+    cap.replaceChildren(SPEAKER[L.sp] ? h('b', null, SPEAKER[L.sp] + ': ') : '', t);
     cap.hidden = !BQ.state.cc;
   };
   const estMs = (id) => { const L = BQ.line(id); return L ? Math.max(1200, L.t.length * 85) : 900; };
@@ -451,7 +457,8 @@
      v0-12 (المالك: «عايز أشيل تقسيم العناصر بالجلسات»): لا جلسات ولا تخطٍّ بالعمر — «التالي» خطّيّ بترتيب القائمة ١–١٦،
      و«اختبر نفسك» (EL16) آخره ببوّابة «اليوم التالي» كما هي. */
   BQ.register = function (id, def) { BQ.defs[id] = def; };
-  BQ.meta = (id) => D.elements.find((e) => e.id === id);
+  const alias = (id) => ((D.alias || {})[id] || id); // v6: روابط قديمة #EL02 ← EL02A
+  BQ.meta = (id) => D.elements.find((e) => e.id === alias(id));
   let PATH = null;
   BQ.path = function () { if (!PATH) PATH = D.elements.slice().sort((x, y) => x.menu - y.menu).map((e) => ({ id: e.id })); return PATH; };
   function posOf(id, hint) {
@@ -526,7 +533,7 @@
   /* v0-12: لا رقائق في الرأس — المحطّة معلومة للمعلّم (في دليله)، والزمن في السطر الصغير فوق العنوان */
   function stationLine(meta) {
     const st = meta.station_short || String(meta.station || '').split('—')[0].trim();
-    return [st, meta.time_label].filter(Boolean).join(' · ');
+    return [kicker(meta.id), st, meta.time_label].filter(Boolean).join(' · '); // v6: «العنصر n من ١٩» هنا لا على شاشة الطفل
   }
   function kicker(id) { return 'العنصر ' + AR((BQ.meta(id) || {}).menu || '') + ' من ' + AR(D.elements.length); }
 
@@ -637,7 +644,7 @@
     const head = h('header.elp-head', null,
       h('div.elp-ic', null, h('img', { src: meta.icon, alt: '' })),
       h('div.elp-titles', null,
-        h('p.elp-kicker', null, h('span', null, kicker(meta.id)), typeBadge(meta.id, 'is-sm')),
+        h('p.elp-kicker', null, typeBadge(meta.id, 'is-sm')), // v6: رقم العنصر للمعلّم وحده (في دليله)
         h('h2.elp-title', { id: 'elp-t', tabindex: '-1' }, cleanName(meta.name))),
       h('div.elp-tools', { role: 'group', 'aria-label': 'أدوات المعلّم' }, adultBtn, ccBtn, restartBtn));
     const nav = navBar(meta.id);
@@ -676,12 +683,28 @@
     const esc = (s) => String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;');
     const age = BQ.state.age;
     const ag = (meta.ages_adult || {})[age];
-    return (meta.cover_lead ? '<p class="goal"><b>ماذا يفعل الطفل:</b> ' + esc(meta.cover_lead) + '</p>' : '') +
+    const hands = (meta.hands || []).length ? '<p class="lbl">مواضع «ردِّدْ» ✋ — أوقِف المقطع عندها</p><ol class="hands">' + meta.hands.map((x) => '<li><b>' + esc(x.title) + ':</b> ' + esc(String(x.hear).replace(/\s*✋\s*/g, ' ').trim()) + (x.do ? ' — <i>' + esc(x.do) + '</i>' : '') + '</li>').join('') + '</ol>' : '';
+    const pause = meta.pause_after ? '<p class="pause"><b>موضع توقّف مقترح:</b> بعد هذا العنصر يمكن أن تقف بالدرس، وتكمل من العنصر التالي في وقت آخر.</p>' : '';
+    const g = meta.guide;
+    if (!g) return (meta.cover_lead ? '<p class="goal"><b>ماذا يفعل الطفل:</b> ' + esc(meta.cover_lead) + '</p>' : '') +
       ((meta.adult_parent || []).length ? '<p class="lbl">للمعلّم</p><ul class="do">' + meta.adult_parent.map((t) => '<li>' + esc(t) + '</li>').join('') + '</ul>' : '') +
-      (ag ? '<p class="age"><b>لعمر ' + ageLabel(age) + ' سنوات:</b> ' + esc(ag) + '</p>' : '') +
-      ((meta.hands || []).length ? '<p class="lbl">مواضع «ردِّدْ» ✋ — أوقِف المقطع عندها</p><ol class="hands">' + meta.hands.map((x) => '<li><b>' + esc(x.title) + ':</b> ' + esc(String(x.hear).replace(/\s*✋\s*/g, ' ').trim()) + (x.do ? ' — <i>' + esc(x.do) + '</i>' : '') + '</li>').join('') + '</ol>' : '') +
-      (meta.pause_after ? '<p class="pause"><b>موضع توقّف مقترح:</b> بعد هذا العنصر يمكن أن تقف بالدرس، وتكمل من العنصر التالي في وقت آخر.</p>' : '') +
-      (meta.id === 'EL16' ? el16Note() : '');
+      (ag ? '<p class="age"><b>لعمر ' + ageLabel(age) + ' سنوات:</b> ' + esc(ag) + '</p>' : '') + hands + pause + (meta.id === 'EL16' ? el16Note() : '');
+    /* v6: «دليل المعلّم» الكامل — ثمانية حقول من البيانات (build_data_v5.py · GUIDE) */
+    const row = (lbl, body, cls) => '<section class="gd-row' + (cls ? ' ' + cls : '') + '"><p class="lbl">' + lbl + '</p>' + body + '</section>';
+    const li = (t) => '<li>' + esc(t) + '</li>';
+    const kind = meta.kind === 'video' ? 'فيديو' : 'لعبة' + (meta.game && meta.game.title ? ' «' + esc(meta.game.title) + '»' : '');
+    return '<p class="goal"><b>' + kind + ' · ' + esc(g.time) + ':</b> ' + esc(g.short) + '</p>' +
+      row('وصف العنصر', '<p>' + esc(g.desc) + '</p>') +
+      row('الغرض التعليمي', '<ul class="do">' + g.purpose.map(li).join('') + '</ul>') +
+      row('كيف يخدم المنهجية', '<p>' + esc(g.method) + '</p>') +
+      row('طريقة التشغيل', '<ol class="do">' + g.run.map(li).join('') + '</ol>' + (ag ? '<p class="age"><b>لعمر ' + ageLabel(age) + ' سنوات:</b> ' + esc(ag) + '</p>' : '')) +
+      hands +
+      row('سياسة المحاولات', '<p><b>' + esc(g.attempts_short) + ':</b> ' + esc(g.attempts) + '</p>') +
+      row('كيف تصحّح', '<p>' + esc(g.correct) + '</p>', 'gd-fix') +
+      row('ماذا تلاحظ وتسجّل', '<p>' + esc(g.observe) + '</p>') +
+      row('المدّة', '<p>' + esc(g.time) + (meta.time_label ? ' (' + esc(meta.time_label) + ')' : '') + '</p>') +
+      ((meta.prints || []).length ? row('للطباعة', '<p>' + meta.prints.map((x) => '<a class="gd-print" href="' + esc(x.href) + '" target="_blank" rel="noopener">' + esc(x.label) + '</a>').join(' · ') + '</p>') : '') +
+      pause + (meta.id === 'EL16' ? el16Note() : '');
   }
   function el16Note() {
     const g = BQ.gate.el16();
@@ -725,6 +748,7 @@
   /** فنّ الغلاف المصمَّم: قائمة BQ_COVERS/D.covers إن وُجدت، وإلا تجربة تحميل الملفّ مرّة واحدة لكلّ عنصر */
   const coverProbe = {};
   function designedCover(id) {
+    const cf = (BQ.meta(id) || {}).cover_file; if (cf) return Promise.resolve(cf); // v6: غلاف مستعار (EL02A ← EL02)
     const list = window.BQ_COVERS || D.covers;
     if (Array.isArray(list)) return Promise.resolve(list.includes(id) ? 'media/cover/' + id + '.webp' : null);
     if (!coverProbe[id]) coverProbe[id] = new Promise((res) => { const i = new Image(); i.onload = () => res(i.naturalWidth ? i.src : null); i.onerror = () => res(null); i.src = 'media/cover/' + id + '.webp'; });
@@ -734,7 +758,7 @@
   function cover(ctx, def, onStart) {
     const meta = ctx.meta, id = meta.id;
     const info = BQ.coverInfo(id);
-    const hk = (def && def.hero) || HERO[id];
+    const hk = (def && def.hero) || meta.hero || HERO[id];
     const heroSrc = hk && BQ.hasImg(hk) ? BQ.img(hk) : null;
     const play = ctx.frame.querySelector('.elp-play');
     if (play) play.classList.add('has-cover');
@@ -795,9 +819,8 @@
       art,
       h('div.cv-shade', { 'aria-hidden': 'true' }),
       h('div.cv-text', null,
-        h('p.cv-kicker', null, h('span.cv-kick-t', null, 'العُنْصُرُ ' + AR(meta.menu || '') + ' مِنْ ' + AR(D.elements.length)), typeBadge(id, 'cv-type')),
-        h('h3.cv-title', { id: tid }, info.title),
-        h('p.cv-child', { lang: 'ar' }, early ? 'هَذا لِلْغَدِ!' : info.child)),
+        /* v6 (الإطار v2 القاعدة ٤): الغلاف للطفل رسم + عنوان + «ابْدَأْ» فقط — رقم العنصر في دليل المعلّم، والجملة في الدليل */
+        h('h3.cv-title', { id: tid }, info.title)),
       h('div.cv-go', null, brq, action)));
     (play || ctx.stage).append(c);
   }
@@ -836,6 +859,7 @@
   BQ.open = function (id, opt) {
     opt = opt || {};
     if (id === 'last') id = lastEl || BQ.path()[0].id;
+    id = alias(id);
     const src = opt.src || 'api';
     const hmode = opt.history || (src === 'boot' ? 'replace' : 'push');
     if (/^end-/.test(id)) id = (resumeTarget() || { id: BQ.path()[0].id }).id; // روابط «نهاية الجلسة» القديمة
@@ -929,6 +953,7 @@
       el.setAttribute('aria-label', 'أُنجز ' + AR(n) + ' من ' + AR(t) + ' عنصراً');
     }
     const mc = $('#menuCount'); if (mc) mc.textContent = AR(n) + ' / ' + AR(t);
+    const pt = el && el.querySelector('small'); if (pt) pt.textContent = '/ ' + AR(t);
     updateResume();
   }
   /** وجهة «تابِعْ»: آخر عنصر لم يكتمل، أو ما بعده في المسار */
@@ -1000,6 +1025,7 @@
     if (confirmEl) { closeConfirm(); return; }
     const yes = h('button.bq-btn.blue', { type: 'button', onclick: () => {
       BQ.state.done.clear(); store.set('done', []); store.del('last');
+      if (BQ.compass) BQ.compass.reset(); // v6: البوصلة تبدأ خافتة
       for (const e of D.elements) { try { localStorage.removeItem(PFX + 'ts-' + e.id); } catch (x) { /* */ } }
       $$('.item').forEach((i) => i.classList.remove('is-done'));
       updateProgress(); closeConfirm(); UI.toast('مُسح تقدّم الدرس.'); btn.focus({ preventScroll: true });
