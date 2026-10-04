@@ -1,0 +1,68 @@
+{
+ "video": "v6-EL01",
+ "element": "EL01",
+ "title": "تهيّأ للدرس",
+ "idea": "صوت غامض في المساء: ما هو؟",
+ "src": "media/video/v6-EL01.mp4",
+ "poster": "media/video/v6-EL01.jpg",
+ "duration": 35.0,
+ "song": false,
+ "bpm": null,
+ "status": "draft_unapproved",
+ "source": "v6 EDL over the v5 material (video_src/build_v6_videos.py) · 1920×1080 24 fps",
+ "interim": "Grok motion pending (G01 G02 G03 G05): 4 shot(s) use the start-frame still — EL01:S01 EL01:S02 EL01:S03 EL01:S08",
+ "placeholders": null,
+ "scenes": [
+  {
+   "t": 0.0,
+   "title": "الأحجية",
+   "thumb": "v5/N01"
+  },
+  {
+   "t": 4.0,
+   "title": "المساء",
+   "thumb": "v5/SF-01"
+  },
+  {
+   "t": 9.0,
+   "title": "تك…"
+  },
+  {
+   "t": 13.5,
+   "title": "ثلاثة احتمالات",
+   "thumb": "v5/ROOM5"
+  },
+  {
+   "t": 22.3,
+   "title": "السؤال"
+  },
+  {
+   "t": 30.5,
+   "title": "يتبع",
+   "thumb": "v5/P01"
+  }
+ ],
+ "cues": [],
+ "lines": [
+  {
+   "id": "bariq_L1-01_d1-EL02_02_ar",
+   "t": 22.655,
+   "end": 24.044,
+   "sp": "BRQ",
+   "text": "ما هَذا الصَّوْتُ؟"
+  },
+  {
+   "id": "bariq_L1-01_ins-where_ar",
+   "t": 24.855,
+   "end": 26.29,
+   "sp": "HAB",
+   "text": "أَيْنَ هَذا الصَّوْتُ؟"
+  }
+ ],
+ "marks": [
+  {
+   "t": 26.55,
+   "text": "✋ المعلّم يوقف: تخمين بالإشارة أو بكلمة، بلا حكم"
+  }
+ ]
+}

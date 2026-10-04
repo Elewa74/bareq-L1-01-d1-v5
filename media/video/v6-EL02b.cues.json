@@ -1,0 +1,82 @@
+{
+ "video": "v6-EL02b",
+ "element": "EL02-B",
+ "title": "سَمِعْتُ فَرْقاً!",
+ "idea": "حين يختلف صوتان نقول «سَمِعْتُ فَرْقاً!»",
+ "src": "media/video/v6-EL02b.mp4",
+ "poster": "media/video/v6-EL02b.jpg",
+ "duration": 30.0,
+ "song": false,
+ "bpm": null,
+ "status": "draft_unapproved",
+ "source": "v6 EDL over the v5 material (video_src/build_v6_videos.py) · 1920×1080 24 fps",
+ "interim": "Grok motion pending (G15 G16): 2 shot(s) use the start-frame still — EL02:S23 EL02:S25",
+ "placeholders": null,
+ "scenes": [
+  {
+   "t": 0.0,
+   "title": "الثلاثة عند الطاولة",
+   "thumb": "v5/P03"
+  },
+  {
+   "t": 1.0,
+   "title": "صوتان",
+   "thumb": "v5/SF-05"
+  },
+  {
+   "t": 19.4,
+   "title": "الختام"
+  }
+ ],
+ "cues": [],
+ "lines": [
+  {
+   "id": "bariq_L1-01_ins-same_ar",
+   "t": 10.15,
+   "end": 12.071,
+   "sp": "HAB",
+   "text": "هَلْ هُما صَوْتٌ واحِدٌ؟"
+  },
+  {
+   "id": "L1-01_d1_s1_01",
+   "t": 15.08,
+   "end": 16.613,
+   "sp": "BRQ",
+   "text": "سَمِعْتُ فَرْقاً!"
+  },
+  {
+   "id": "bariq_L1-01_v5_saif_samitu_farqan_ar",
+   "t": 19.615,
+   "end": 20.871,
+   "sp": "SAY",
+   "text": "سَمِعْتُ فَرْقاً!"
+  },
+  {
+   "id": "bariq_L1-01_intro-1_20_ar",
+   "t": 21.375,
+   "end": 22.771,
+   "sp": "MAJ",
+   "text": "سَمِعْتُ فَرْقاً!"
+  },
+  {
+   "id": "bariq_L1-01_d1-EL06_05_ar",
+   "t": 23.28,
+   "end": 24.842,
+   "sp": "BRQ",
+   "text": "سَمِعْتُ فَرْقاً!"
+  },
+  {
+   "id": "bariq_L1-01_ins-say_ar",
+   "t": 25.37,
+   "end": 26.85,
+   "sp": "HAB",
+   "text": "قولوا مَعي، هَيّا!"
+  }
+ ],
+ "marks": [
+  {
+   "t": 27.1,
+   "text": "✋ قولوا مع الشخصيات: «سَمِعْتُ فَرْقاً!»"
+  }
+ ]
+}

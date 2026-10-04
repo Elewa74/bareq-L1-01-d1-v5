@@ -1,0 +1,109 @@
+{
+ "video": "v6-EL05",
+ "element": "EL05",
+ "title": "التراكيب اللغوية",
+ "idea": "ثلاث جمل «هَذا… / هَذِهِ…» من القصّة",
+ "src": "media/video/v6-EL05.mp4",
+ "poster": "media/video/v6-EL05.jpg",
+ "duration": 39.417,
+ "song": false,
+ "bpm": null,
+ "status": "draft_unapproved",
+ "source": "v6 EDL over the v5 material (video_src/build_v6_videos.py) · 1920×1080 24 fps",
+ "interim": "Grok motion pending (G01 G22 G23 G24 G25): 5 shot(s) use the start-frame still — EL05:S01 EL05:S02 EL05:S05 EL05:S07 EL05:S09",
+ "placeholders": null,
+ "scenes": [
+  {
+   "t": 0.0,
+   "title": "الأحجية",
+   "thumb": "v5/N01"
+  },
+  {
+   "t": 4.0,
+   "title": "اللوح",
+   "thumb": "v5/N08b"
+  },
+  {
+   "t": 13.0,
+   "title": "فم سيف",
+   "thumb": "v5/N09"
+  },
+  {
+   "t": 20.1,
+   "title": "البوصلة",
+   "thumb": "v5/N09"
+  },
+  {
+   "t": 27.4,
+   "title": "اللوحة"
+  },
+  {
+   "t": 36.4,
+   "title": "الختام",
+   "thumb": "v5/N09"
+  }
+ ],
+ "cues": [],
+ "lines": [
+  {
+   "id": "bariq_L1-01_intro-1_08_ar",
+   "t": 8.65,
+   "end": 10.491,
+   "sp": "MAJ",
+   "text": "هَذا صَوْتُ الماءِ."
+  },
+  {
+   "id": "bariq_L1-01_L1-build_01_ar",
+   "t": 13.655,
+   "end": 15.38,
+   "sp": "MAJ",
+   "text": "هَذا فَمُ سَيْفٍ."
+  },
+  {
+   "id": "bariq_L1-01_d1-EL05_01_ar",
+   "t": 20.76,
+   "end": 22.784,
+   "sp": "MAJ",
+   "text": "هَذِهِ بَوْصَلَةُ سَيْفٍ."
+  },
+  {
+   "id": "bariq_L1-01_intro-1_08_ar",
+   "t": 27.75,
+   "end": 29.591,
+   "sp": "MAJ",
+   "text": "هَذا صَوْتُ الماءِ."
+  },
+  {
+   "id": "bariq_L1-01_L1-build_01_ar",
+   "t": 30.255,
+   "end": 31.98,
+   "sp": "MAJ",
+   "text": "هَذا فَمُ سَيْفٍ."
+  },
+  {
+   "id": "bariq_L1-01_d1-EL05_01_ar",
+   "t": 32.66,
+   "end": 34.684,
+   "sp": "MAJ",
+   "text": "هَذِهِ بَوْصَلَةُ سَيْفٍ."
+  }
+ ],
+ "marks": [
+  {
+   "t": 10.7,
+   "text": "✋ ردِّدوا: «هَذا صَوْتُ الماءِ.»"
+  },
+  {
+   "t": 15.6,
+   "text": "✋ ردِّدوا: «هَذا فَمُ سَيْفٍ.»"
+  },
+  {
+   "t": 23.0,
+   "text": "✋ ردِّدوا: «هَذِهِ بَوْصَلَةُ سَيْفٍ.»"
+  },
+  {
+   "t": 34.9,
+   "text": "✋ قولوا مع ماجد"
+  }
+ ]
+}

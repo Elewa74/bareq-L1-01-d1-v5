@@ -1,0 +1,103 @@
+{
+ "video": "v6-EL04",
+ "element": "EL04",
+ "title": "مفرداتي",
+ "idea": "«ماءْ» مكتوبة، و«م» في أوّلها",
+ "src": "media/video/v6-EL04.mp4",
+ "poster": "media/video/v6-EL04.jpg",
+ "duration": 31.083,
+ "song": false,
+ "bpm": null,
+ "status": "draft_unapproved",
+ "source": "v6 EDL over the v5 material (video_src/build_v6_videos.py) · 1920×1080 24 fps",
+ "interim": "Grok motion pending (G21): 1 shot(s) use the start-frame still — EL04:S02",
+ "placeholders": null,
+ "scenes": [
+  {
+   "t": 0.0,
+   "title": "الصحن",
+   "thumb": "v5/ROOM5-T"
+  },
+  {
+   "t": 2.5,
+   "title": "يد سيف تصبّ",
+   "thumb": "v5/SF-07"
+  },
+  {
+   "t": 9.0,
+   "title": "الصوت الأوّل"
+  },
+  {
+   "t": 14.8,
+   "title": "الكلمة وحدها"
+  },
+  {
+   "t": 18.3,
+   "title": "في جملة",
+   "thumb": "v5/P09"
+  },
+  {
+   "t": 25.6,
+   "title": "بطاقتي"
+  }
+ ],
+ "cues": [],
+ "lines": [
+  {
+   "id": "bariq_L1-01_v5_maa_ar",
+   "t": 6.32,
+   "end": 7.08,
+   "sp": "SAY",
+   "text": "ماءْ."
+  },
+  {
+   "id": "bariq_L1-01_v5_mm_maa_ar",
+   "t": 9.415,
+   "end": 12.006,
+   "sp": "SAY",
+   "text": "مْـ… ماءْ."
+  },
+  {
+   "id": "bariq_L1-01_v5_maa_ar",
+   "t": 15.12,
+   "end": 15.88,
+   "sp": "SAY",
+   "text": "ماءْ."
+  },
+  {
+   "id": "bariq_L1-01_d1-EL06_02_ar",
+   "t": 20.41,
+   "end": 22.033,
+   "sp": "MAJ",
+   "text": "الماءُ في الصَّحْنِ."
+  },
+  {
+   "id": "bariq_L1-01_ins-say_ar",
+   "t": 22.47,
+   "end": 23.95,
+   "sp": "HAB",
+   "text": "قولوا مَعي، هَيّا!"
+  },
+  {
+   "id": "bariq_L1-01_v5_mm_maa_ar",
+   "t": 27.515,
+   "end": 30.106,
+   "sp": "SAY",
+   "text": "مْـ… ماءْ."
+  }
+ ],
+ "marks": [
+  {
+   "t": 12.3,
+   "text": "✋ ردِّدوا: «مْـ… ماءْ.» — الشفتان مطبقتان أوّلاً"
+  },
+  {
+   "t": 16.1,
+   "text": "✋ ردِّدوا: «ماءْ.»"
+  },
+  {
+   "t": 24.2,
+   "text": "✋ ردِّدوا: «الماءُ في الصَّحْنِ.»"
+  }
+ ]
+}

@@ -1,0 +1,84 @@
+{
+ "video": "v6-EL03",
+ "element": "EL03",
+ "title": "فَمي مُغْلَقٌ",
+ "idea": "«مْـ» تُصنع بشفتين مطبقتين ونحسّه بإصبع على الأنف",
+ "src": "media/video/v6-EL03.mp4",
+ "poster": "media/video/v6-EL03.jpg",
+ "duration": 31.75,
+ "song": false,
+ "bpm": null,
+ "status": "draft_unapproved",
+ "source": "v6 EDL over the v5 material (video_src/build_v6_videos.py) · 1920×1080 24 fps",
+ "interim": "Grok motion pending (G17 G18 G19 G20): 4 shot(s) use the start-frame still — EL03:S02 EL03:S03 EL03:S07 EL03:S08",
+ "placeholders": null,
+ "scenes": [
+  {
+   "t": 0.0,
+   "title": "إلى الطاولة",
+   "thumb": "v5/N05"
+  },
+  {
+   "t": 3.0,
+   "title": "ماجد يسأل بعينيه",
+   "thumb": "v5/N05"
+  },
+  {
+   "t": 6.0,
+   "title": "حركة مْـ"
+  },
+  {
+   "t": 18.14,
+   "title": "التجربة",
+   "thumb": "v5/P05-NB"
+  },
+  {
+   "t": 26.14,
+   "title": "من الجانب",
+   "thumb": "v5/P07-DIA"
+  },
+  {
+   "t": 31.74,
+   "title": "سيف يكتب",
+   "thumb": "v5/P07-DIA"
+  }
+ ],
+ "cues": [],
+ "lines": [
+  {
+   "id": "bariq_L1-01_v5_fami_mughlaq_ar",
+   "t": 8.8,
+   "end": 13.8,
+   "sp": "SAY",
+   "text": "مْـ… مْـ… فَمي مُغْلَقٌ هَكَذا!"
+  },
+  {
+   "id": "bariq_L1-01_v5_mm_pinch_ar",
+   "t": 18.54,
+   "end": 20.78,
+   "sp": "SAY",
+   "text": "مْـ… …مْـ"
+  },
+  {
+   "id": "bariq_L1-01_v5_mm_maa_ar",
+   "t": 26.555,
+   "end": 29.146,
+   "sp": "SAY",
+   "text": "مْـ… ماءْ."
+  }
+ ],
+ "marks": [
+  {
+   "t": 14.34,
+   "text": "✋ قلّدوا: شفتان مطبقتان، الإصبع على جانب الأنف، «مْـ»"
+  },
+  {
+   "t": 25.64,
+   "text": "✋ جرّبوا مع المعلّم: أمسكوا أنوفكم وقولوا «مْـ»"
+  },
+  {
+   "t": 29.44,
+   "text": "✋ قلّدوا: «مْـ… ماءْ.»"
+  }
+ ]
+}
